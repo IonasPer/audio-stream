@@ -1,57 +1,118 @@
-import React from 'react';
+/*import React from 'react';*/
 import albums from "../albumData";
-import {ListGroup, ListGroupItem} from 'reactstrap';
+import React from "react"
+import {Link, Route, Switch} from "react-router-dom"
+import {AudioPlayerProvider, useAudioPlayer} from "react-use-audio-player"
+
+import {AudioSeekBar} from "./AudioSeekBar.tsx"
+import {VolumeControl} from "./VolumeControl.tsx"
+import {DurationLabel} from "./DurationLabel.tsx"
+import "../styles/styles.scss"
 import cover from "./../albums/Luv Sic.jpg";
-import {Switch, Route, Link} from "react-router-dom";
-/*import AlbumInfo from "./AlbumInfo";*/
 
+/*import SoundLibrary from "./SoundLibrary";
+import PlayBar from "./Playbar";*/
+import AlbumInfo from "./AlbumInfo";
 
-
-const AlbumInfo = () => {
-    console.log('album.info');
-    console.log('test');
-
-    return (<div>
-        Test
-        {/*        <h3>{album.title}</h3>
-        {album.data.tracks.map((track,key)=>{return <Card key={key}>
-
-            <CardBody>
-                test
-                {track.title} {track.artist}
-            </CardBody>
-        </Card>})}*/}
-    </div>)
+const PlayBar = () => {
+    console.log('playbar');
+    const { togglePlayPause, playing, ready } = useAudioPlayer();
+    return (
+        <div className="playBar">
+            <button
+                className="playBar__playButton"
+                onClick={togglePlayPause}
+                disabled={!ready}
+            >
+                <i className={`fa ${playing ? "fa-pause" : "fa-play"}`} />
+            </button>
+            <div className="playBar__timeStuff">
+                <AudioSeekBar className="playBar__seek" />
+                <DurationLabel />
+            </div>
+            <VolumeControl />
+        </div>
+    )
 }
-export default function AlbumList(){
+
+const SoundLibrary = () => {
+    const sounds = ["http://134.209.81.210/audio/nujabes.mp3","http://134.209.81.210/audio/nujabes.mp3"];
+
+    const albumList = albums;
+    console.log(albumList)
+    const { ready,load, playing,loading, error } = useAudioPlayer();
+    console.log("ready:" + ready + " load:" + load + " playing:"+playing + " loading:"+ loading + " error:" + error);
+    return (
+        <div className="soundLibrary page">
+            <div className="page__title">Sound Library</div>
+            <div className="soundLibrary__sounds">
+
+                {sounds.map((src, i) => {
+
+                    return (
+                        <div
+                            key={i}
+                            className="track"
+                            onClick={() => {
+                                load({ src, autoplay: !playing,html5:true  })
+                            }}
+                        >
+                            <i className="fa fa-music track__icon" />
+                            <div className="track__title">
+                                {"Nujabes"}
+                            </div>
+                        </div>
+                    )
+
+                })}
+            </div>
+        </div>
+    )
+}
 
 
+
+export const AlbumList = props => {
+
+
+    const url = props.match?.url;
     console.log('album.list');
-    albums.map((album,key) => {
+    albums.map((album, key) => {
         console.log(album.data);
     })
-    return(<div>
-        <h3>Album List</h3>
+    return (<div className={"col-md-6"}>
+            <h3>Album List</h3>
 
-        <div className="fullNavigation">
-            <div className="navigation">
-
-
-                    {albums.map((album,key) => {
+            <AudioPlayerProvider>
+                <div className="globalPlayerExample">
+                    <div className="navigation">
+                        <Link className="navigation__link" to={`library`}>
+                            Sound Library
+                        </Link>
+                        <Link className="navigation__link" to={`account`}>
+                            Account Details
+                        </Link>
+                    </div>
+                    <div className={"col-md-6"}>{albums.map((album, key) => {
 
                         return <div key={key}>
 
-                            <Link className="navigation__link" to={`/album_info`}>
-                            <img src={cover} width={"100rem"} height={"100rem"}/>
-                            <h5>The title {album.title}</h5>
+                            <Link className="navigation__link" to={`${url}/album_info/${key + 1}`}>
+                                <img src={cover} width={"100rem"} height={"100rem"}/>
+                                <h5>The title {album.title}</h5>
                             </Link>
                         </div>
 
-                    })}
-
-            </div>
-
-
+                    })}</div>
+                    <Link className="navigation__link" to={`${url}/library`}>Sound library</Link>
+                    <Switch>
+                        <Route path={`${url}/album_info/1`} component={AlbumInfo}/>
+                        <Route path={`${url}/album_info/2`} component={AlbumInfo}/>
+                        <Route path={`${url}/library`} component={SoundLibrary}/>
+                    </Switch>
+                    <PlayBar/>
+                </div>
+            </AudioPlayerProvider>
         </div>
-    </div>)
+    )
 }

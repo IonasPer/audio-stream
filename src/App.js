@@ -1,10 +1,10 @@
 import React from 'react';
 import {BrowserRouter, Link, Route, Switch} from "react-router-dom"
 import './App.css';
-import AlbumList from "./components/AlbumList";
+/*import AlbumList from "./components/AlbumList";*/
 import AlbumInfo from "./components/AlbumInfo";
 import albums from "./albumData";
-
+import {AlbumList, Spotifyish} from "./components/AlbumList"
 
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
   return (
 
       <div className="app">
+          <div className={"container col-md-12"}>
         <BrowserRouter>
             <div className="exampleSelect">
                 <h3>Examples</h3>
@@ -26,6 +27,7 @@ function App() {
 
           </Switch>
         </BrowserRouter>
+      </div>
       </div>
   );
 }
