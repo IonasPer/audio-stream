@@ -1,0 +1,118 @@
+[
+  {
+    "title": "Samurai Champloo",
+    "data": {
+      "cover": "albums/SamuraiChamploo-Departure.jpg",
+      "tracks": [
+        {
+          "title": "Battlecry",
+          "artist": "(feat. Shing02) Nujabes"
+        },
+        {
+          "title": "The Space Between Two World",
+          "artist": "Nujabes"
+        },
+        {
+          "title": "Aruarian Dance",
+          "artist": "Nujabes"
+        },
+        {
+          "title": "Kujaku",
+          "artist": "Nujabes"
+        },
+        {
+          "title": "Mystline",
+          "artist": "Nujabes"
+        },
+        {
+          "title": "1st. Samurai",
+          "artist": "Nujabes"
+        },
+        {
+          "title": "Ole",
+          "artist": "Fat Jon"
+        },
+        {
+          "title": "624 Part 2",
+          "artist": "Fat Jon"
+        },
+        {
+          "title": "Genome",
+          "artist": "Fat Jon"
+        },
+        {
+          "title": "No way back",
+          "artist": "Fat Jon"
+        },
+        {
+          "title": "Funkin",
+          "artist": "Fat Jon"
+        },
+        {
+          "title": "Stay",
+          "artist": "Fat Jon"
+        },
+        {
+          "title": "Chambers",
+          "artist": "Fat Jon"
+        },
+        {
+          "title": "Ask",
+          "artist": "Fat Jon"
+        },
+        {
+          "title": "How You Feel",
+          "artist": "Fat Jon"
+        },
+        {
+          "title": "624 Part 1",
+          "artist": "Fat Jon"
+        },
+        {
+          "title": "Shiki no Uta",
+          "artist": " (feat. MINMI) Nujabes"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Luv(Sic)",
+    "data": {
+      "cover": "albums/Luv SIc.jpg",
+      "tracks": [
+        {
+          "title": "Luv(Sic) Part 1",
+          "artist": "Shing02 Nujabes"
+        },
+        {
+          "title": "Luv(Sic) Part 2",
+          "artist": "Shing02 Nujabes"
+        },
+        {
+          "title": "Luv(Sic) Part 3",
+          "artist": "Shing02 Nujabes"
+        },
+        {
+          "title": "Luv(Sic) Part 4",
+          "artist": "Shing02 Nujabes"
+        },
+        {
+          "title": "Luv(Sic) Part 5",
+          "artist": "Shing02 Nujabes & Uyama Hiroto"
+        },
+        {
+          "title": "Luv(Sic) Grand Finale",
+          "artist": "Shing02 Nujabes & Uyama Hiroto"
+        },
+        {
+          "title": "Luv(sic) (12\" Remix)",
+          "artist": "Shing02 Nujabes"
+        },
+        {
+          "title": "Luv(sic) Part 6 (Uyama Hiroto Remix)",
+          "artist": "Shing02 Nujabes & Uyama Hiroto"
+        }
+      ]
+    }
+  }
+]
