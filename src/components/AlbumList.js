@@ -50,7 +50,7 @@ const SoundLibrary = () => {
                 {sounds.map((src, i) => {
 
                     return (
-                        <div
+                        <div style={{border:"1px solid blue"}}
                             key={i}
                             className="track"
                             onClick={() => {
@@ -59,7 +59,7 @@ const SoundLibrary = () => {
                         >
                             <i className="fa fa-music track__icon" />
                             <div className="track__title">
-                                {"Nujabes"}
+                                Click to listen {"Nujabes"}
                             </div>
                         </div>
                     )
@@ -80,18 +80,12 @@ export const AlbumList = props => {
     albums.map((album, key) => {
         console.log(album.data);
     })
-    return (<div className={"col-md-6"}>
+    return (<div className={"col-md-6"} style={{textAlign:"center"}}>
             <h3>Album List</h3>
 
             <AudioPlayerProvider>
-                <div className="globalPlayerExample">
-                    <div className="navigation">
-                        <Link className="navigation__link" to={`library`}>
-                            Sound Library
-                        </Link>
-                        <Link className="navigation__link" to={`account`}>
-                            Account Details
-                        </Link>
+                <div className="globalPlayerExample" >
+                    <div>
                     </div>
                     <div className={"col-md-6"}>{albums.map((album, key) => {
 
@@ -104,7 +98,7 @@ export const AlbumList = props => {
                         </div>
 
                     })}</div>
-                    <Link className="navigation__link" to={`${url}/library`}>Sound library</Link>
+                    <Link className="navigation__link" to={`${url}/library`}>Play Stream</Link>
                     <Switch>
                         <Route path={`${url}/album_info/1`} component={AlbumInfo}/>
                         <Route path={`${url}/album_info/2`} component={AlbumInfo}/>

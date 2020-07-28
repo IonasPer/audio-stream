@@ -4,19 +4,18 @@ import './App.css';
 /*import AlbumList from "./components/AlbumList";*/
 import AlbumInfo from "./components/AlbumInfo";
 import albums from "./albumData";
-import {AlbumList, Spotifyish} from "./components/AlbumList"
+import {AlbumList} from "./components/AlbumList"
 
 
 function App() {
-    console.log('album.data 2');
-    console.log(albums);
+
   return (
 
       <div className="app">
-          <div className={"container col-md-12"}>
+          <div className={"container col-md-12"} style={{textAlign:"center"}}>
         <BrowserRouter>
             <div className="exampleSelect">
-                <h3>Examples</h3>
+                <h3>Audio stream Example</h3>
 
             </div>
             <Link to="/list">Album List</Link>
