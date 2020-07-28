@@ -1,16 +1,26 @@
 import React from 'react';
-import albums from "../albumData";
-import { ListGroup, ListGroupItem } from 'reactstrap';
+import albums from "./../albumData";
+import {Card,CardBody} from "reactstrap";
+export default function AlbumInfo(){
+    console.log('album.info');
 
+    const currentAlbum = albums.filter(album =>{
+        if(window.location.href.includes(album.id)){
+            console.log(album.id);
+            return album}
+        }
+    ).pop();
+    console.log('currentAlbum');
+    console.log(currentAlbum);
+    return(<div>
+        Test
+        <h3>{currentAlbum.title}</h3>
+        {currentAlbum.data.tracks.map((track,key)=>{return <Card key={key}>
 
-export default function AlbumInfo({album}){
-    console.log(album.data);
-    return(<>
-        <h3>{album.title}</h3>
-        <ListGroup>
-            {album.data.tracks.map(album => {
-                return <ListGroupItem>{album.title}</ListGroupItem>
-            })}
-        </ListGroup>
-    </>)
+            <CardBody>
+                test
+                {track.title} {track.artist}
+            </CardBody>
+        </Card>})}
+    </div>)
 }

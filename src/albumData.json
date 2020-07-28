@@ -1,8 +1,8 @@
 [
-  {
+  {"id": 1,
     "title": "Samurai Champloo",
     "data": {
-      "cover": "albums/SamuraiChamploo-Departure.jpg",
+      "cover": "./../albums/SamuraiChamploo-Departure.jpg",
       "tracks": [
         {
           "title": "Battlecry",
@@ -75,10 +75,10 @@
       ]
     }
   },
-  {
+  {"id": 2,
     "title": "Luv(Sic)",
     "data": {
-      "cover": "albums/Luv SIc.jpg",
+      "cover": "./../albums/Luv Sic.jpg",
       "tracks": [
         {
           "title": "Luv(Sic) Part 1",
